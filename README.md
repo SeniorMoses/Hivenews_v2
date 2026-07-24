@@ -1,53 +1,99 @@
-# Hivenews_v2 is a fastapi web service that user can read news, and add comments
+# Hivenews_v2 📰
 
-it has multiple features as far as secured restapi is concerned,
+Hivenews_v2 is a FastAPI-based news web service where users can read news articles, search for news, and interact through comments.
 
-key features include
+The API implements several security features and follows modern REST API development practices.
 
-#signup 
-#login
-#authentication with oauth2 
-#authorization
-#role based access control 
-#post news
-#read news
-#find news by title
-#comment
+## 🚀 Features
 
-#technology used
+### Authentication & Security
+- User signup
+- User login
+- OAuth2 authentication
+- JWT-based authentication
+- Authorization
+- Role-Based Access Control (RBAC)
+- Password hashing with bcrypt
+- Dependency injection
+
+### News Management
+- Post news (admin access)
+- Read news
+- Search news by title
+- Pagination support
+
+### User Interaction
+- Add comments to news articles
+- Read comments
+
+---
+
+## 🛠️ Technologies Used
+
+- **FastAPI** — Web framework for building REST APIs
+- **SQLAlchemy** — ORM for database management
+- **OAuth2 + JWT** — Authentication and authorization
+- **bcrypt** — Secure password hashing
+- **Pydantic** — Data validation
+- **Dependency Injection** — Managing application dependencies
+- **PostgreSQL** — Database support
+
+---
+
+## 🔮 Future Improvements
+
+Planned features:
+
+- Like news articles
+- user connection 
+- Rate limiting
+- Alembic database migrations
+- Docker containerization
+- Logging system
+- Automated testing
+- CI/CD pipeline
+
+---
+
+## 🌍 Live Demo
+
+The service is deployed on Render:
+
+url:https://hivenews-v2.onrender.com
+interactive documentation:
+https://hivenews-v2.onrender.com/docs
+
+---
 
 
-#oauth2 of authentication 
-#bcrypt for hashing password 
-#dependency injection 
-#sqlalchemy 
+---
+
+## ⚙️ Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/SeniorMoses/Hivenews_v2.git
+
+cd Hivenews_v2
+```
+### 2. install depency
+
+pip install -r requirements.txt
+
+### 3. create .env file
+SECRET = your_secret_key
+DBURL = your_db_url
+
+### 4. start the server
+uvicorn main:app 
+
+or if using gunicorn
+gunicorn main:app -k uvicorn.workers.UvicornWorker
+
+AUTHOR
+SENIOR MOSES
+GHANA 
 
 
-#next improvement 
-
-#like news
-#rate limiting 
-#alembic migration 
-#docker
-#logs
-#testing
-
-
-#how to run
-Note: this web service is live on this url
-https//:hivenews-v2.onrender.com
-automatic docs for testing at 
-https//:hivenews-v2.onrender.com/docs
-
-to run this service:
-#clone the repo : SeniorMoses/Hivenews_v2
-install depency : [pip install -r requirements.txt]
-create .env file the following variables 
-SECRET = secret_key_here
-DBURL = your_database_url
-
-run uvicorn main:app 
-or 
-gunicorn main:app -k uvicorn workers.UvicornWorker
-test the server at your localhost:port_number/docs
 
