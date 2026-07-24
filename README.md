@@ -1,99 +1,147 @@
-# Hivenews_v2 📰
+# 📰 Hivenews_v2
 
-Hivenews_v2 is a FastAPI-based news web service where users can read news articles, search for news, and interact through comments.
+Hivenews_v2 is a **FastAPI-powered news REST API** that allows users to read news articles, search news by title, and interact through comments.
 
-The API implements several security features and follows modern REST API development practices.
+The project focuses on building a secure backend system using modern API development practices, including authentication, authorization, and role-based access control.
 
-## 🚀 Features
+---
 
-### Authentication & Security
-- User signup
+# 🚀 Features
+
+## 🔐 Authentication & Security
+
+- User registration (Signup)
 - User login
-- OAuth2 authentication
-- JWT-based authentication
-- Authorization
+- OAuth2 authentication flow
+- JWT access token authentication
+- Authorization system
 - Role-Based Access Control (RBAC)
-- Password hashing with bcrypt
-- Dependency injection
+- Secure password hashing using bcrypt
+- Dependency injection with FastAPI
 
-### News Management
-- Post news (admin access)
-- Read news
+---
+
+## 📰 News Management
+
+- Create news articles (Admin only)
+- Read news articles
 - Search news by title
 - Pagination support
 
-### User Interaction
+---
+
+## 💬 User Interaction
+
 - Add comments to news articles
-- Read comments
+- View comments on articles
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
-- **FastAPI** — Web framework for building REST APIs
-- **SQLAlchemy** — ORM for database management
-- **OAuth2 + JWT** — Authentication and authorization
-- **bcrypt** — Secure password hashing
-- **Pydantic** — Data validation
-- **Dependency Injection** — Managing application dependencies
-- **PostgreSQL** — Database support
+| Technology | Purpose |
+
+| FastAPI | High-performance REST API framework 
+| SQLAlchemy | Database ORM 
+| PostgreSQL | Production database 
+| OAuth2 | Authentication protocol 
+| JWT | Secure token-based authentication 
+| bcrypt | Password hashing 
+| Pydantic | Data validation and serialization 
+| Dependency Injection | Managing application dependencies 
 
 ---
 
-## 🔮 Future Improvements
+# 🏗️ API Security Implementation
+
+Hivenews_v2 includes:
+
+- Protected API routes using JWT tokens
+- Admin-only endpoints using RBAC
+- Secure password storage
+- Token-based user authentication
+- Validation using Pydantic schemas
+
+---
+
+# 🔮 Future Improvements
 
 Planned features:
 
-- Like news articles
-- user connection 
-- Rate limiting
-- Alembic database migrations
-- Docker containerization
-- Logging system
-- Automated testing
-- CI/CD pipeline
+- ❤️ Like news articles
+- 👥 User connections/follow system
+- 🚦 Rate limiting
+- 🗄️ Alembic database migrations
+- 🐳 Docker containerization
+- 📝 Logging system
+- 🧪 Automated testing
+- ⚙️ CI/CD pipeline
 
 ---
 
-## 🌍 Live Demo
+# 🌍 Live Demo
 
-The service is deployed on Render:
+The API is deployed on Render:
 
-url:https://hivenews-v2.onrender.com
-interactive documentation:
+**API Base URL**
+```
+https://hivenews-v2.onrender.com
+```
+
+**Interactive Swagger Documentation**
+```
 https://hivenews-v2.onrender.com/docs
+```
 
 ---
 
+# ⚙️ Running Locally
 
----
-
-## ⚙️ Running Locally
-
-### 1. Clone the repository
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/SeniorMoses/Hivenews_v2.git
 
 cd Hivenews_v2
 ```
-### 2. install depency
 
+## 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-### 3. create .env file
-SECRET = your_secret_key
-DBURL = your_db_url
+## 3. Create environment variables
 
-### 4. start the server
-uvicorn main:app 
+Create a `.env` file:
 
-or if using gunicorn
+```env
+SECRET=your_secret_key
+DBURL=your_database_url
+```
+
+## 4. Start the development server
+
+Using Uvicorn:
+
+```bash
+uvicorn main:app --reload
+```
+
+Using Gunicorn:
+
+```bash
 gunicorn main:app -k uvicorn.workers.UvicornWorker
+```
 
-AUTHOR
-SENIOR MOSES
-GHANA 
+---
 
+# 📌 Author
 
+**Senior Moses**
 
+Backend Developer  
+Ghana 🇬🇭
+
+GitHub:
+https://github.com/SeniorMoses
