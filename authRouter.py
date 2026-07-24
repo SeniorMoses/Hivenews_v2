@@ -37,7 +37,35 @@ async def register(data: Signup, db: Session = Depends(get_db)):
     db.refresh(new_user)
 
     return {"message": "Signup successfully 🎉"}
+@router.post("/insert admin")
+async def insert_admin(data:Signup, db:Session=Depends(get_db), user=Depends(get_current_user)):
+    if user["role"] != "admin":
+        raise HTTPException (
+            status_code = 403,
+            detail= "user forbidden"
+        ) 
+    existing_user = db.query(User).filter(User.email == data.email).first()
+    if existing_user:
+        raise HTTPException(
+        status_code=400,
+         detail="Email already exists"
+         )
 
+    hashed = await run_in_threadpool(
+        bcrypt.hashpw,
+        data.password.encode(),
+        bcrypt.gensalt()
+    )
+
+    new_admin = User(
+        username=data.username,
+        role="admin",
+        email=data.email,
+        password=hashed.decode()
+    )
+    db.add(new_admin)
+    db.commit()
+    db.refresh(new_admin)
 @router.post("/login", response_model=TokenResponse)
 async def signin(
     data: OAuth2PasswordRequestForm = Depends(),
