@@ -42,12 +42,26 @@ The project focuses on building a secure backend system using modern API develop
 | Technology | Purpose |
 
 | FastAPI | High-performance REST API framework 
+
+
 | SQLAlchemy | Database ORM 
+
+
 | PostgreSQL | Production database 
+
+
 | OAuth2 | Authentication protocol 
+
+
 | JWT | Secure token-based authentication 
+
+
 | bcrypt | Password hashing 
+
+
 | Pydantic | Data validation and serialization 
+
+
 | Dependency Injection | Managing application dependencies 
 
 ---
