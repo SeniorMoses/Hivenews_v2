@@ -7,7 +7,7 @@ import bcrypt
 from database import get_db
 from models import User, RefreshToken
 from schemas import Signup, TokenResponse, RefreshRequest, LogoutRequest
-from auth import create_access_token, create_refresh_token
+from auth import create_access_token, create_refresh_token, get_current_user
 
 router = APIRouter(prefix="", tags=["Authentication"])
 
